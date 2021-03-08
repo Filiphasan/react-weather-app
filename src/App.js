@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useEffect, useState } from 'react';
+import Navbar from './components/Navbar/Navbar';
+import Search from './components/Search/Search';
+import Loading from './components/Loading/Loading';
 
-function App() {
+const App = () => {
+  const [datas, setDatas] = useState({});
+  const [city, setCity] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [alert, setAlert] = useState({ msg: '', type: '' });
+
+  const getDatas = () => {
+    setLoading(true);
+    setTimeout(() => {
+      fetch(`http://api.weatherapi.com/v1/forecast.json?key=bfc9399e5cd9455ca1e103248210703&q=${city}&days=3&lang=tr`).then(res => res.json()).
+        then(data => setDatas(data), setLoading(false));
+    }, 3000);
+  }
+  const onClickHandler = (e) => {
+    if (city.trim() === '') {
+      setAlert({ msg: 'Please Enter a Value', type: 'error' });
+    } else {
+      getDatas();
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar icon="fas fa-snowflake" text="Weather App" />
+      <Search city={city} setCity={setCity} onClickHandler={onClickHandler} />
+      <Loading loading={loading} />
+
+    </>
   );
 }
 
