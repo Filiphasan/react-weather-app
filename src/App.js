@@ -16,20 +16,26 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       fetch(`http://api.weatherapi.com/v1/forecast.json?key=bfc9399e5cd9455ca1e103248210703&q=${city}&days=6`).then(res => res.json()).
-        then(data => setDatas(data), setLoading(false));
-      if (!datas.error) {
-        setAlert({ msg: 'Keep calm everything is ok', type: 'success', icon: 'fas fa-thumbs-up', visible: true });
-      } else {
-        setAlert({ msg: 'Please Check The Value', type: 'warning', icon: 'fas fa-exclamation-circle', visible: true });
-      }
+        then(data => {
+          setDatas(data);
+          setLoading(false);
+          checkData(data);
+        });
     }, 1000);
   }
+  const checkData = (data) => {
+    if (!data.error) {
+      setAlert({ msg: 'Keep calm everything is ok', type: 'success', icon: 'fas fa-thumbs-up', visible: true });
+    } else {
+      setAlert({ msg: 'Please Check The Value', type: 'warning', icon: 'fas fa-exclamation-circle', visible: true });
+    }
+  }
+
   const onClickHandler = (e) => {
     if (city.trim() === '') {
       setAlert({ msg: 'Please Enter a Value', type: 'error', icon: 'far fa-times-circle', visible: true });
     } else {
       getDatas();
-
     }
   }
   useEffect(() => {
