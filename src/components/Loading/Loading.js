@@ -8,7 +8,7 @@ const Loading = ({ loading }) => {
                 loading && (
                     <div className="container">
                         <div className="loading">
-                            <img src="https://weareiu.com/wp-content/uploads/2018/11/weather.gif" className="loading-img" alt="" />
+                            <img src="https://support.lenovo.com/esv4/images/loading.gif" className="loading-img" alt="" />
                         </div>
                     </div>
                 )

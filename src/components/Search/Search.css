@@ -18,7 +18,7 @@
     outline: none;
     width: 100%;
     font-size: 3rem;
-    border-radius: 1rem;
+    border-radius: 3rem;
     box-sizing: border-box;
     border: solid 0.3rem #28527a;
 }
@@ -34,8 +34,8 @@
     width: 6rem;
     transform: translate(-100%, 0);
     background-color: #28527a;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
     cursor: pointer;
     color: #f4d160;
 }

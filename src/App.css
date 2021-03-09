@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
 * {
   margin: 0;
   padding: 0;
   border: 0 none;
+  outline: none;
 }
 
 html {
@@ -13,6 +15,9 @@ html {
 
 body {
   background-color: #8ac4d0;
+  background-size: cover;
+  background-image: url(./wp7023522.png);
+  font-family: 'Akaya Telivigala', cursive;
 }
 
 li {
