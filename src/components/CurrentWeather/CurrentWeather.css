@@ -10,6 +10,7 @@
     color: #104b72;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 2rem 0;
 }
 
@@ -91,6 +92,43 @@
 .default-img {
     display: block;
     margin: auto;
+}
+
+@media screen and (max-width: 1280px) {
+    .current-state .state-info h3 {
+        font-size: 8rem;
+    }
+    .current-state .state-info p {
+        font-size: 2.5rem;
+    }
+    .current-details {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .current-info-title {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .current-info-title {
+        font-size: 2rem;
+    }
+    .current-details {
+        width: 100%;
+    }
+    .current-state {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .default-img {
+        width: 100%;
+    }
 }
 
 /**/

@@ -9,6 +9,7 @@
     border-radius: 3rem;
     transition: all .5s;
     animation: appear 500ms ease-out forwards;
+    box-sizing: border-box;
 }
 
 @keyframes appear {
@@ -50,4 +51,16 @@
 .alert-success {
     color: #19fc00;
     background-color: #a8fc9f;
+}
+
+@media screen and (max-width: 992px) {
+    .alert {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .alert {
+        width: 100%;
+    }
 }

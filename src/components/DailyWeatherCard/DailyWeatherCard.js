@@ -10,7 +10,7 @@ const DailyWeatherCard = ({ daysData }) => {
                     daysData.map(item => {
                         return (
                             <>
-                                <div className="daily-weather-box">
+                                <div key={item.date} className="daily-weather-box">
                                     <div className="daily-weather">
                                         <h1>{getDateAndMonthWithName(item.date)}</h1>
                                         <div className="daily-weather-info">

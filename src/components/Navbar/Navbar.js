@@ -8,11 +8,6 @@ export const Navbar = ({ icon, text }) => {
                 <div className="nav-brand">
                     <a href="#" className="logo"><i className={icon}></i> {text}</a>
                 </div>
-                <ul className="nav-links">
-                    <li className="nav-link">
-                        <a href="#">About</a>
-                    </li>
-                </ul>
             </div>
         </div>
     )

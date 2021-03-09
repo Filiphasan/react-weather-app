@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     if (alert.visible) {
       setTimeout(() => {
-        setAlert({ visible: false });
+        setAlert({ msg: '', type: '', icon: '', visible: false });
       }, 2000);
     }
   }, [alert])

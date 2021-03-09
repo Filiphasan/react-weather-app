@@ -71,3 +71,21 @@
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 992px) {
+    .daily-weather-box {
+        width: 70%;
+    }
+    .daily-weather-boxes {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .daily-weather-box {
+        width: 100%;
+    }
+    .daily-weather-boxes {
+        justify-content: center;
+    }
+}
